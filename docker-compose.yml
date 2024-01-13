@@ -5,10 +5,11 @@ services:
     ports:
       - "3000:3000"
     environment:
-      PGRST_DB_URI: postgres://postgres:postgres@db:5432/dvdrental
+      PGRST_DB_URI: postgres://authenticator:qwerty@db:5432/dvdrental
       PGRST_OPENAPI_SERVER_PROXY_URI: http://127.0.0.1:3000
       PGRST_DB_ANON_ROLE: web_anon
       PGRST_DB_AGGREGATES_ENABLED: true
+      PGRST_JWT_SECRET: "x3utk5afpyjMNkKTUcxABxjYk5OjMiAw"
     depends_on:
       - db
   db:
